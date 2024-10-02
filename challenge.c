@@ -1,9 +1,16 @@
 #include <stdio.h>
 
+typedef struct rec {
+        float largeur;
+        float longueur;
+    }rectangle;
 
 
-
-
+float airerec (rectangle rec1);
+void challengeI();
+void challengeII();
+void challengeIII();
+void challengeIV();
 
 void challengeI(){
     typedef struct personne
@@ -32,53 +39,78 @@ void challengeII(){
     }
 }
 
-void airerec ()
-/*void challengeIII(){
-   typedef struct rec {
-        int largeur;
-        int longueur;
-    }rectangle
-    rectangle 
+
+void challengeIII(){
+
+    rectangle rec1 ={ 10, 21};
+   printf("%.2f", airerec(rec1));
 
 }
+
+
+float airerec (rectangle rec1){
+    return rec1.largeur * rec1.longueur;
+}
+
+void challengeIV(){
+    struct point
+    {
+        int x;
+        int y;    
+    };
+    struct point Point;
+    struct point *p;
+    p = &Point;
+    printf("entrez le x de point :");
+    scanf("%d", &(p->x));
+    printf("entrez le y du point :");
+    scanf("%d", &(p->y));
+    printf("le x est : %d\n", p->x);
+    printf("le y est : %d", p->y);
+
+
+}
+
 
 
 int main(){
-
-challengeII();
-
-
-}
-
-/* scanf("%d", &choix);
-            getchar();
+        int choix;
+         do {
+            
+            printf("\nExercices sur les Tableaux en C:\n");
+            printf("1. Définition et Utilisation de Structure");
+            printf("2. Structure avec Tableau.\n");
+            printf("3. Passage de Structure en Argument.\n");
+            printf("4. Structure avec Pointeurs.\n");
+            printf("5. Structure et Fonction de Retour.\n");
+            printf("0. Quitter\n");
+            printf("Choisissez une option: ");
+            scanf("%d", &choix);
 
             switch (choix)
             {
-            case 1:
-                ajouter( );
-                break;
-            case 2:
-                afficher();
-                break;
-            case 3:
-                rechercher();
-                break;
-            case 4:
-                modifier();
-                break;
-            case 5:
-                supprimer();
-                break;
-            case 0:
-                
-                break;
-    
-            default:
-            printf("-choix invalide \n");
+                case 1:
+                    challengeI(); 
+                case 2:
+                    challengeII();
+                    break;
+                case 3:
+                    challengeIII(); 
+                    break;
+                case 4:
+                    challengeIV();
+                    break;
+                case 5:
+                   
+                    break;
             
             }
+            
+            
+    } while (choix != 0);
+    
+    return 0;
 
 
-        } while (choix != 0);
+
 }
